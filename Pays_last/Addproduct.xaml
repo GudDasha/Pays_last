@@ -1,0 +1,37 @@
+﻿<Page x:Class="Pays_last.Addproduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pays_last"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Addproduct" Background="White" >
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Категория" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" Margin="0 0 15 0" />
+        <Label Grid.Row="1" Grid.Column="0" Content="Назначение платежа" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 15 0" FontSize="20"></Label>
+        <Label Grid.Row="2" Grid.Column="0" Content="Количество" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 15 0" FontSize="20"></Label>
+        <Label Grid.Row="3" Grid.Column="0" Content="Цена" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 15 0" FontSize="20"></Label>
+        <ComboBox x:Name="cmb" Grid.Column="1" Height="40" Width="450" DisplayMemberPath="name" FontSize="20" IsReadOnly="False"></ComboBox>
+       
+        <TextBox x:Name="txt_product" Grid.Column="1" Grid.Row="1" Height="50" Width="450" Text="{Binding Наименование }" FontSize="20"></TextBox>
+        <TextBox x:Name="txt_count" Grid.Row="2" Grid.Column="2" Height="50" Width="230" Text="{Binding Количество}" HorizontalAlignment="Left" Margin="148 0 0 0 " FontSize="20" ></TextBox>
+        <TextBox x:Name="txt_cost" Grid.Row="3" Grid.Column="3" Text="{Binding Цена}" Height="50" Width="230" HorizontalAlignment="Left" Margin="148 0 0 0" FontSize="20"></TextBox>
+       
+        <Button x:Name="btn_add" Grid.Row="4" Grid.Column="4" Height="40" Width="120" Content="Добавить" FontSize="20"  Background="White" Click="btn_add_Click"  ></Button>
+        <Button x:Name="btn_cancel" Grid.Row="4" Grid.Column="4" Height="40" Width="120" Content="Отменить" FontSize="20" HorizontalAlignment="Right" Margin="0 0 40 0" Background="White" Click="btn_cancel_Click" ></Button>
+
+    </Grid>
+</Page>

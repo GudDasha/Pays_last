@@ -1,0 +1,48 @@
+﻿<Page x:Class="Pays_last.MainTable"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pays_last"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+
+      Title="MainTable" Height="500" Width="1038" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="btn_plus" Width="40" Height="40" Margin="15 0 0 0 " Content="+"  Background="White" Click="btn_plus_Click" ></Button>
+            <Button x:Name="btn_minus" Width="40" Height="40" Margin="15 0 0 0 " Content="-" Background="White" Click="btn_minus_Click" ></Button>
+            <Label Content="C" VerticalAlignment="Center" FontSize="15" Margin="10 0 0 0"></Label>
+            <ComboBox x:Name="cmb_firstdate" Width="120" Height="35" Margin="10 0 0 0" >
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+            <Label Content="по" VerticalAlignment="Center" FontSize="15" Margin="10 0 0 0 "></Label>
+            <ComboBox x:Name="cmb_seconddate" Width="120" Height="35" Margin="10 0 0 0"></ComboBox>
+            <Label Content="Категория" VerticalAlignment="Center" FontSize="15" Margin="30 0 0 0"></Label>
+            <ComboBox x:Name="cmb_category" Width="120" Height="35" Margin="10 0 0 0" DisplayMemberPath="name"></ComboBox>
+            <Button x:Name="btn_chose" Content="Выбрать" Height="35" Width="100" Margin="20 0 0 0" Background="White"></Button>
+            <Button x:Name="btn_clean" Content="Очистить" Height="35" Width="100" Margin="10 0 0 0" Background="White"></Button>
+            <Button x:Name="btn_report" Content="Отчёт" Height="35" Width="100" Margin="10 0 0 0" Background="White" Click="btn_report_Click"></Button>
+        </StackPanel>
+
+        <DataGrid x:Name="grid_categ" Grid.Row="1" Margin="10" IsReadOnly="True" AutoGenerateColumns="False"  Foreground="#FF020C1D" Grid.RowSpan="3" FontSize="20" MinColumnWidth="200" MaxColumnWidth="500" CanUserReorderColumns="False" RowBackground="#FFDADADA" AlternatingRowBackground="White" Background="White" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Наименование}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Количество}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Цена}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Сумма" Binding="{Binding Сумма}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Категория" Binding="{Binding Category.name}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
